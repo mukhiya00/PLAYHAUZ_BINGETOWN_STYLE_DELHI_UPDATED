@@ -1,0 +1,148 @@
+<!doctype html>
+<html><head><title>PLAYHAUZ — Booking</title><meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><link rel="stylesheet" href="/public/css/app.css"/><link rel="icon" href="/public/assets/brand/playhauz_logo.webp"/></head>
+<body class="glitch-bg">
+<div class="topbar">
+  <div class="brand">
+    <a class="brand-link" href="/"><img class="brand-logo" src="/public/assets/brand/playhauz_logo.webp" alt="PLAYHAUZ logo"/></a>
+    <div class="city-pill">Delhi</div>
+  </div>
+  <div class="nav">
+    <a href="/">Home</a>
+    <a href="/list?city=Delhi&area=Saket&date=" onclick="event.preventDefault();location.href='/list?city=Delhi&area=Saket&date='+new Date().toISOString().slice(0,10)">Location</a>
+    <a href="/booking/new">Book</a>
+    <a href="/admin">My Bookings</a>
+  </div>
+  <a class="btn primary" href="/booking/new">Book Now</a>
+</div>
+
+<div class="container">
+  <div class="stepper">
+    <div class="step active" data-step="1"><span>1</span><label>Basic Details</label></div>
+    <div class="line"></div>
+    <div class="step" data-step="2"><span>2</span><label>Occasion</label></div>
+    <div class="line"></div>
+    <div class="step" data-step="3"><span>3</span><label>Cake</label></div>
+    <div class="line"></div>
+    <div class="step" data-step="4"><span>4</span><label>Add-ons</label></div>
+    <div class="line"></div>
+    <div class="step" data-step="5"><span>5</span><label>Payment</label></div>
+  </div>
+
+  <div class="booking-grid">
+    <div class="panel">
+      <div class="row-between">
+        <div>
+          <h2 id="panelTitle" style="margin:0">Basic Details</h2>
+          <div id="panelHint" class="muted small">Fill customer details & select slot.</div>
+        </div>
+        <a class="btn ghost small" id="backToList" href="/">Back</a>
+      </div>
+
+      <div class="step-page" data-page="1">
+        <div class="section" style="padding-top:12px">
+          <div class="table-wrap">
+            <table class="table">
+              <tr><th>City</th><td>Delhi</td></tr>
+              <tr><th>Location</th><td id="overviewArea">Saket</td></tr>
+              <tr><th>Date</th><td><input id="date" type="date"/></td></tr>
+            </table>
+          </div>
+
+          <div class="section">
+            <div class="row-between">
+              <h3 style="margin:0">Select Time Slot</h3>
+              <button class="btn small" id="refreshSlots" type="button">Refresh</button>
+            </div>
+            <div id="slots" class="slots"></div>
+          </div>
+
+          <div class="section">
+            <h3 style="margin:0 0 10px">Booking Details</h3>
+            <div class="form-grid">
+              <div class="field"><label>Booking Name *</label><input id="name" placeholder="Type here"/></div>
+              <div class="field"><label>Whatsapp Number *</label><input id="phone" placeholder="10 digit number"/></div>
+              <div class="field"><label>Email (optional)</label><input id="email" placeholder="you@example.com"/></div>
+              <div class="field"><label>People (Adults)</label><input id="adults" type="number" value="2" min="1"/></div>
+              <div class="field"><label>Kids (0-10)</label><input id="kids" type="number" value="0" min="0"/></div>
+              <div class="field full"><label>Notes (optional)</label><textarea id="notes" rows="3" placeholder="Any instruction..."></textarea></div>
+            </div>
+            <div class="actions"><button class="btn primary" id="to2" type="button">Next step</button></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="step-page hidden" data-page="2">
+        <div class="section" style="padding-top:12px">
+          <h3 style="margin:0 0 10px">Select the Occasion</h3>
+          <div class="muted small" style="margin-bottom:10px">Celebration has 2 options only: Birthday & Anniversary.</div>
+          <div id="occasionGrid" class="grid-occasions"></div>
+          <div class="actions"><button class="btn" data-prev>Back</button><button class="btn primary" data-next>Next step</button></div>
+        </div>
+      </div>
+
+      <div class="step-page hidden" data-page="3">
+        <div class="section" style="padding-top:12px">
+          <h3 style="margin:0 0 10px">Choose Cake (optional)</h3>
+          <div id="cakeGrid" class="grid-occasions"></div>
+          <div class="actions"><button class="btn" data-prev>Back</button><button class="btn primary" data-next>Next step</button></div>
+        </div>
+      </div>
+
+      <div class="step-page hidden" data-page="4">
+        <div class="section" style="padding-top:12px">
+          <h3 style="margin:0 0 10px">Add-ons</h3>
+          <div id="addonsWrap" class="addons"></div>
+          <div class="actions"><button class="btn" data-prev>Back</button><button class="btn primary" data-next>Next step</button></div>
+        </div>
+      </div>
+
+      <div class="step-page hidden" data-page="5">
+        <div class="section" style="padding-top:12px">
+          <h3 style="margin:0 0 10px">Terms & Conditions</h3>
+          <div class="muted small">
+            1. No smoking/drinking inside the room.<br/>
+            2. Any damage will be chargeable.<br/>
+            3. Maintain cleanliness.<br/>
+            4. ID may be required at entry.<br/>
+            5. Price ₹0 (dummy) right now.
+          </div>
+
+          <div class="payment" style="margin-top:14px">
+            <div class="pay-row"><span class="muted">Total</span><strong id="sumTop">₹0</strong></div>
+            <div class="pay-row"><span class="muted">Advance</span><strong id="sumAdvance">₹0</strong></div>
+            <div class="pay-row"><span class="muted">Balance</span><strong id="sumBalance">₹0</strong></div>
+          </div>
+
+          <div class="actions"><button class="btn" data-prev>Back</button><button class="btn primary" id="confirm">Confirm Booking (dummy)</button></div>
+          <div id="done" class="done hidden"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="summary-card">
+      <div class="sum-head">
+        <div><div class="muted small">Total</div><div class="sum-total" id="sumTotal">₹0</div></div>
+        <div class="badge">Delhi</div>
+      </div>
+      <div class="muted small" style="margin:6px 0 10px">Booking summary</div>
+      <div id="sumList" class="sum-list"></div>
+      <div style="margin-top:10px" class="muted small">Advance payable: <strong id="sumAdvSide">₹0</strong></div>
+      <div class="muted small">Balance amount: <strong id="sumBalSide">₹0</strong></div>
+    </div>
+  </div>
+</div>
+
+<script>
+  const p=new URLSearchParams(location.search);
+  window.__BOOT = {
+    city:"Delhi",
+    area: p.get("area")||"Saket",
+    date: p.get("date")||new Date().toISOString().slice(0,10),
+    theatre_id: p.get("theatre_id")||"1",
+    time: p.get("time")||"",
+    dur: p.get("dur")||"180"
+  };
+  document.getElementById("overviewArea").textContent = window.__BOOT.area;
+</script>
+<script src="/public/js/booking.js"></script>
+</body></html>

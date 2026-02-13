@@ -1,0 +1,14 @@
+{
+  "name": "playhauz-booking-delhi",
+  "version": "1.0.0",
+  "private": true,
+  "main": "server.js",
+  "type": "commonjs",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "better-sqlite3": "^9.4.5",
+    "express": "^4.19.2"
+  }
+}

@@ -1,0 +1,148 @@
+{
+  "occasions": [
+    {
+      "id": "cele_birthday",
+      "category": "celebration",
+      "title": "Birthday",
+      "subtitle": "Celebrate your day",
+      "image": "/public/assets/occasions/birthday.webp"
+    },
+    {
+      "id": "cele_anniversary",
+      "category": "celebration",
+      "title": "Anniversary",
+      "subtitle": "Make it special",
+      "image": "/public/assets/occasions/anniversary.webp"
+    },
+    {
+      "id": "gaming_zone",
+      "category": "gaming",
+      "title": "Gaming Zone",
+      "subtitle": "Book 1\u20133 hours",
+      "image": "/public/assets/occasions/gaming.webp"
+    },
+    {
+      "id": "memories_exp",
+      "category": "cinema",
+      "title": "Memories Experience",
+      "subtitle": "Watch & relive moments",
+      "image": "/public/assets/occasions/cinema.webp"
+    },
+    {
+      "id": "ent_stage",
+      "category": "entertainment",
+      "title": "Entertainment",
+      "subtitle": "Standup \u2022 Concert \u2022 Show",
+      "image": "/public/assets/occasions/entertainment.webp"
+    }
+  ],
+  "cakes": [
+    {
+      "id": "cake_none",
+      "title": "No Cake",
+      "price": 0,
+      "image": "/public/assets/cakes/none.webp"
+    },
+    {
+      "id": "cake_choco",
+      "title": "Chocolate Cake",
+      "price": 0,
+      "image": "/public/assets/cakes/choco.webp"
+    },
+    {
+      "id": "cake_red",
+      "title": "Red Velvet",
+      "price": 0,
+      "image": "/public/assets/cakes/redvelvet.webp"
+    }
+  ],
+  "addons": [
+    {
+      "id": "decor_basic",
+      "group_name": "decor",
+      "title": "Decor (Basic)",
+      "price": 0,
+      "image": "/public/assets/addons/decor_basic.webp"
+    },
+    {
+      "id": "decor_premium",
+      "group_name": "decor",
+      "title": "Decor (Premium)",
+      "price": 0,
+      "image": "/public/assets/addons/decor_premium.webp"
+    },
+    {
+      "id": "gift_box",
+      "group_name": "gift",
+      "title": "Gift Box",
+      "price": 0,
+      "image": "/public/assets/addons/gift.webp"
+    },
+    {
+      "id": "entry_walk",
+      "group_name": "entry",
+      "title": "Grand Entry Walk",
+      "price": 0,
+      "image": "/public/assets/addons/entry_walk.webp"
+    },
+    {
+      "id": "entry_kidcar",
+      "group_name": "entry",
+      "title": "Kid Car Entry",
+      "price": 0,
+      "image": "/public/assets/addons/entry_car.webp"
+    },
+    {
+      "id": "entry_normal",
+      "group_name": "entry",
+      "title": "Normal Entry",
+      "price": 0,
+      "image": "/public/assets/addons/entry_normal.webp"
+    },
+    {
+      "id": "food_popcorn",
+      "group_name": "food",
+      "title": "Popcorn Combo",
+      "price": 0,
+      "image": "/public/assets/addons/food_popcorn.webp"
+    },
+    {
+      "id": "food_snacks",
+      "group_name": "food",
+      "title": "Snacks Combo",
+      "price": 0,
+      "image": "/public/assets/addons/food_snacks.webp"
+    },
+    {
+      "id": "game_celebrate",
+      "group_name": "extras",
+      "title": "Celebrate while gaming",
+      "price": 0,
+      "image": "/public/assets/rooms/gaming3.webp"
+    },
+    {
+      "id": "dur_1h",
+      "group_name": "gaming_duration",
+      "title": "1 Hour",
+      "price": 0,
+      "image": "/public/assets/rooms/gaming1.webp",
+      "meta_json": "{\"minutes\":60}"
+    },
+    {
+      "id": "dur_2h",
+      "group_name": "gaming_duration",
+      "title": "2 Hours",
+      "price": 0,
+      "image": "/public/assets/rooms/gaming2.webp",
+      "meta_json": "{\"minutes\":120}"
+    },
+    {
+      "id": "dur_3h",
+      "group_name": "gaming_duration",
+      "title": "3 Hours",
+      "price": 0,
+      "image": "/public/assets/rooms/gaming3.webp",
+      "meta_json": "{\"minutes\":180}"
+    }
+  ]
+}

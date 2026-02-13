@@ -1,0 +1,56 @@
+<!doctype html>
+<html><head><title>PLAYHAUZ</title><meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><link rel="stylesheet" href="/public/css/app.css"/><link rel="icon" href="/public/assets/brand/playhauz_logo.webp"/></head>
+<body class="glitch-bg">
+<div class="topbar">
+  <div class="brand">
+    <a class="brand-link" href="/"><img class="brand-logo" src="/public/assets/brand/playhauz_logo.webp" alt="PLAYHAUZ logo"/></a>
+    <div class="city-pill">Delhi</div>
+  </div>
+  <div class="nav">
+    <a href="/">Home</a>
+    <a href="/list?city=Delhi&area=Saket&date=" onclick="event.preventDefault();location.href='/list?city=Delhi&area=Saket&date='+new Date().toISOString().slice(0,10)">Location</a>
+    <a href="/booking/new">Book</a>
+    <a href="/admin">My Bookings</a>
+  </div>
+  <a class="btn primary" href="/booking/new">Book Now</a>
+</div>
+
+<div class="container">
+  <div class="hero">
+    <div>
+      <h1 class="neon-title">Premium Experiences in one place.</h1>
+      <p class="muted">Celebrations • Gaming Zone • Entertainment • Memories Experience — neon glitch vibe.</p>
+      <div class="panel" style="margin-top:14px;max-width:740px">
+        <div class="form-grid">
+          <div class="field"><label>City</label><input id="city" value="Delhi" disabled/></div>
+          <div class="field"><label>Location</label><select id="area"></select></div>
+          <div class="field full"><label>Date</label><input id="date" type="date"/></div>
+        </div>
+        <div class="actions"><button class="btn primary" id="bookNow">Book Now</button></div>
+        <div class="muted small">* Price ₹0 (dummy). Real payments later.</div>
+      </div>
+    </div>
+    <div style="display:flex;justify-content:center">
+      <img class="floaty" src="/public/assets/brand/characters.webp" style="max-width:520px;width:100%;height:auto" alt="Characters"/>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-head">
+      <div><h2 style="margin:0">Highlights</h2><div class="muted small">Auto-scroll</div></div>
+    </div>
+    <div class="marquee">
+      <div class="track">
+        <img src="/public/assets/rooms/birthday.webp" alt="Celebration"/>
+        <img src="/public/assets/rooms/gaming1.webp" alt="Gaming"/>
+        <img src="/public/assets/rooms/cinema_room.webp" alt="Memories"/>
+        <img src="/public/assets/rooms/stage.webp" alt="Entertainment"/>
+        <img src="/public/assets/rooms/entry.webp" alt="Entry"/>
+        <img src="/public/assets/rooms/birthday.webp" alt="Celebration 2"/>
+        <img src="/public/assets/rooms/gaming2.webp" alt="Gaming 2"/>
+      </div>
+    </div>
+  </div>
+</div>
+<script src="/public/js/home.js"></script>
+</body></html>

@@ -1,0 +1,33 @@
+<!doctype html>
+<html><head><title>PLAYHAUZ — Admin</title><meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><link rel="stylesheet" href="/public/css/app.css"/><link rel="icon" href="/public/assets/brand/playhauz_logo.webp"/></head>
+<body class="glitch-bg">
+<div class="topbar">
+  <div class="brand">
+    <a class="brand-link" href="/"><img class="brand-logo" src="/public/assets/brand/playhauz_logo.webp" alt="PLAYHAUZ logo"/></a>
+    <div class="city-pill">Delhi</div>
+  </div>
+  <div class="nav">
+    <a href="/">Home</a>
+    <a href="/list?city=Delhi&area=Saket&date=" onclick="event.preventDefault();location.href='/list?city=Delhi&area=Saket&date='+new Date().toISOString().slice(0,10)">Location</a>
+    <a href="/booking/new">Book</a>
+    <a href="/admin">My Bookings</a>
+  </div>
+  <a class="btn primary" href="/booking/new">Book Now</a>
+</div>
+
+<div class="container">
+  <div class="panel">
+    <div class="row-between">
+      <div><div style="font-weight:900;font-size:18px">Bookings (Delhi)</div><div class="muted small">Latest 200</div></div>
+      <a class="btn" href="/booking/new">New Booking</a>
+    </div>
+    <div class="table-wrap" style="margin-top:10px">
+      <table class="table">
+        <thead><tr><th>Booking ID</th><th>Created</th><th>Theatre</th><th>Slot</th><th>Dur</th><th>Name</th><th>WhatsApp</th><th>Email</th></tr></thead>
+        <tbody id="tbody"></tbody>
+      </table>
+    </div>
+  </div>
+</div>
+<script src="/public/js/admin.js"></script>
+</body></html>

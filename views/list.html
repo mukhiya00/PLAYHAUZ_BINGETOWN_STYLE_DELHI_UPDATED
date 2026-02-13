@@ -1,0 +1,33 @@
+<!doctype html>
+<html><head><title>PLAYHAUZ — Select Theatre</title><meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><link rel="stylesheet" href="/public/css/app.css"/><link rel="icon" href="/public/assets/brand/playhauz_logo.webp"/></head>
+<body class="glitch-bg">
+<div class="topbar">
+  <div class="brand">
+    <a class="brand-link" href="/"><img class="brand-logo" src="/public/assets/brand/playhauz_logo.webp" alt="PLAYHAUZ logo"/></a>
+    <div class="city-pill">Delhi</div>
+  </div>
+  <div class="nav">
+    <a href="/">Home</a>
+    <a href="/list?city=Delhi&area=Saket&date=" onclick="event.preventDefault();location.href='/list?city=Delhi&area=Saket&date='+new Date().toISOString().slice(0,10)">Location</a>
+    <a href="/booking/new">Book</a>
+    <a href="/admin">My Bookings</a>
+  </div>
+  <a class="btn primary" href="/booking/new">Book Now</a>
+</div>
+
+<div class="container">
+  <div class="panel">
+    <div class="row-between">
+      <div>
+        <div style="font-weight:900;font-size:18px">Theatres in <span id="areaLine"></span></div>
+        <div class="muted small"><span id="cityLine"></span> • <span id="dateLine"></span></div>
+      </div>
+      <a class="btn" href="/">Update</a>
+    </div>
+  </div>
+  <div class="section">
+    <div id="cards" class="cards-grid" style="grid-template-columns:repeat(2,1fr)"></div>
+  </div>
+</div>
+<script src="/public/js/list.js"></script>
+</body></html>
